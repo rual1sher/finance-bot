@@ -1,0 +1,16 @@
+[Unit]
+Description=Finance Telegram Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/var/www/finance-bot
+ExecStart=/usr/bin/npm start
+Restart=always
+RestartSec=10
+EnvironmentFile=/var/www/finance-bot/.env
+
+[Install]
+WantedBy=multi-user.target
+
